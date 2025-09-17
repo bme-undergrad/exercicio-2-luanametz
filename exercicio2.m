@@ -9,8 +9,25 @@ pkg load optim
 % nao alterar: fim
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
+NG = 7;
+f = [10, 2*NG]';
+x0 = [1,1]';
 
-% digite seu codigo aqui
+A = [-0.30, -0.20;
+     -0.20, -0.25;
+     -0.25, -0.30];
+b = [-15;
+     -10;
+     -12];
+
+Aeq = [];
+beq = [];
+
+ub = [20; 50];
+lb = [0; 0];
+
+x = linprog(f,A,b,Aeq,beq,lb,ub);
+x = x';
 
 
 % mantenha essas duas linhas finais
